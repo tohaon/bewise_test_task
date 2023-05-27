@@ -8,6 +8,7 @@ from record.model import Audio
 
 from config import DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER
 
+
 DATABASE_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
 engine = create_async_engine(DATABASE_URL)
@@ -49,7 +50,6 @@ async def check_id(id:int) -> bool:
             return True
         return False
     
-    
 async def add_user_to_db(name:str, id:str, token:str):
     async with async_session_maker() as session:
         stmt = insert(User).values(
@@ -59,8 +59,7 @@ async def add_user_to_db(name:str, id:str, token:str):
         )
         await session.execute(stmt)
         await session.commit()
-        
-        
+          
 async def legit_user(user_id:str, access_token:str) -> bool:  
     async with async_session_maker() as session:
         stmt = select(User.access_token).where(User.user_id==user_id)

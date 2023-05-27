@@ -1,5 +1,7 @@
 import requests
+
 from fastapi import HTTPException
+
 
 def get_questions_api(questions_num:int) -> list:
     URL = f"https://jservice.io/api/random?count={questions_num}"

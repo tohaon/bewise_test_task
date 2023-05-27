@@ -1,7 +1,6 @@
-import requests
 from fastapi import APIRouter
-
 from questions.schemas import QuestionRequest, Question
+
 from database import add_to_db, get_last, check_id
 from questions.api_requests import get_questions_api
 

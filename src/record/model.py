@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, MetaData, LargeBinary
-
 from sqlalchemy.ext.declarative import declarative_base
+
 
 Base = declarative_base()
 

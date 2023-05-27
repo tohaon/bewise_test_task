@@ -4,6 +4,7 @@ from questions.router import router as question_router
 from user.router import router as user_router
 from record.router import router as record_router
 
+
 app = FastAPI(
     title="bewise_test"
 )

@@ -6,6 +6,7 @@ from fastapi import APIRouter
 from user.schemas import UserRequest,UserResponse
 from database import add_user_to_db
 
+
 router = APIRouter(
     prefix="/user",
     tags=["User"]

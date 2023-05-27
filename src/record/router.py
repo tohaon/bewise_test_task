@@ -9,6 +9,7 @@ from starlette.background import BackgroundTasks
 
 from database import add_record_to_db, legit_user, get_record
 
+
 router = APIRouter(
     prefix="/record",
     tags=["Record"]
@@ -49,7 +50,6 @@ async def add_record(user_id:str, access_token:str, file:UploadFile = File(..., 
     audio = AudioSegment.from_mp3(f"./record/storage/{file.filename}")
     save_audio = audio.export(f"./record/storage/{audio_id}.mp3", format="wav").read()
       
-    
     for file in os.listdir('./record/storage/'):
         file_path = os.path.join('./record/storage/', file)
         if os.path.isfile(file_path):
