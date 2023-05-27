@@ -29,7 +29,3 @@ async def get_questions(request: QuestionRequest):
         
     last_question = await get_last()
     return last_question
-
-
-    
-    
